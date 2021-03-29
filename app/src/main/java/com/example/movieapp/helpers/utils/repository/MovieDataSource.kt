@@ -7,7 +7,6 @@ import androidx.paging.PageKeyedDataSource
 import com.example.movieapp.helpers.retrofit.Apis
 import com.example.movieapp.helpers.utils.Constants.FIRST_PAGE
 import com.example.movieapp.helpers.utils.NetworkState
-import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 

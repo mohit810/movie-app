@@ -2,7 +2,6 @@ package com.example.movieapp.helpers.retrofit
 
 import com.example.movieapp.helpers.utils.Constants.API_KEY
 import com.example.movieapp.helpers.utils.Constants.BASE_URL
-import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -13,7 +12,7 @@ import java.util.concurrent.TimeUnit
 object RetrofitClient {
     fun getRetrofit(): Apis {
 
-        val requestInterceptor = Interceptor {chain ->
+        val requestInterceptor = Interceptor { chain ->
             val url = chain.request()
                 .url()
                 .newBuilder()
@@ -27,9 +26,9 @@ object RetrofitClient {
 
             return@Interceptor chain.proceed(request)
         }
-        val okHttpClient =OkHttpClient.Builder()
+        val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(requestInterceptor)
-            .connectTimeout(60,TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()
@@ -38,6 +37,6 @@ object RetrofitClient {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(Apis::class.java )
+            .create(Apis::class.java)
     }
 }

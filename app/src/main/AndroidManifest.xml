@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.movieapp">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,11 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
-
-
-        <activity
-            android:name=".views.SingleMovie"
-            android:label="@string/title_activity_single_movie"/>
+        <activity android:name=".views.DetailActivity"></activity>
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
